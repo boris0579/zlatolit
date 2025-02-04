@@ -1,0 +1,286 @@
+@use '../base/variables' as *;
+@use '../utils/mixins' as *;
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: max-content;
+    height: 100%;
+    width: auto;
+    animation: fadeIn 0.3s ease-out;
+    overflow-y: auto;
+    @include hide-scrollbar;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    &__image-container {
+        width: 12.5rem; // 200px
+        position: relative;
+        margin: -1.5rem 0 -2rem -2rem; // -24px 0 -32px -32px
+        border-radius: 0.5rem; // 8px
+        flex-shrink: 0;
+        min-height: 12.5rem; // 200px
+
+        @media (max-width: 48em) {
+            // 768px
+            margin: -1.5rem 0 -1.5rem -1.5rem; // -24px 0 -24px -24px
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: flex;
+        border-radius: 0.5rem; // 8px
+    }
+
+    &__header {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    &__badge {
+        position: absolute;
+        top: 1rem; // 16px
+        left: 1rem; // 16px
+        background-color: #b93c3c;
+        padding: 0.375rem 1rem; // 6px 16px
+        z-index: 3;
+        font-size: 1rem; // 16px
+        line-height: 1.375rem; // 22px
+        width: 3.6875rem; // 59px
+        height: 2.125rem; // 34px
+    }
+
+    &--buy &__title-mobile {
+        display: none;
+
+        @media (max-width: 37.5rem) {
+            // 600px
+            display: block;
+            position: absolute;
+            font-weight: 600;
+            font-size: 1.125rem; // 18px
+            line-height: 1.5625rem; // 25px
+            color: #ffffff;
+            left: 1rem; // 16px
+            bottom: 1rem; // 16px
+            right: 1rem; // 16px
+        }
+    }
+
+    &--buy &__title-desk {
+        font-weight: 600;
+        font-size: 1.5rem; // 24px
+        line-height: 1.2;
+        color: $font-color;
+
+        @media (max-width: 37.5rem) {
+            // 600px
+            display: none;
+        }
+    }
+
+    &__main-content {
+        position: relative;
+    }
+
+    &__main-content,
+    &__header {
+        background: #ffffff;
+        box-shadow: 0 1.25rem 3.125rem rgba(18, 27, 33, 0.2); // 20px 50px
+        border-radius: 0.5rem; // 8px
+        padding: 1.5rem 2rem 2rem; // 24px 32px 32px
+
+        @media (max-width: 48em) {
+            // 768px
+            padding: 1.5rem; // 24px
+        }
+    }
+
+    &__policy {
+        padding: 1.5rem 2rem; // 24px 32px
+        background: #ffffff;
+        box-shadow: 0 0.25rem 3.125rem rgba(18, 27, 33, 0.2); // 4px 50px
+        border-radius: 0.5rem; // 8px
+        z-index: -1;
+        font-size: 0.875rem; // 14px
+        line-height: 1.375rem; // 19px
+        color: $font-color;
+
+        @media (max-width: 48em) {
+            // 768px
+            padding: 1.5rem; // 24px
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1.5rem; // 24px
+    }
+
+    &__btn-close {
+        position: absolute;
+        top: 1rem; // 16px
+        right: 1rem; // 16px
+    }
+
+    &__amount-summary {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem; // 8px
+        column-gap: 1.25rem; // 20px
+    }
+
+    &__amount {
+        flex-shrink: 0;
+    }
+
+    &__amount-label,
+    &__amount-value {
+        display: block;
+        font-size: 1.5rem; // 24px
+        line-height: 2.0625rem; // 33px
+        color: $font-color;
+    }
+
+    &__amount-value {
+        font-weight: 700;
+    }
+
+    &__label {
+        font-size: 0.875rem; // 14px
+        line-height: 1.1875rem; // 19px
+        color: #6d6d6d;
+        margin-bottom: 0.5rem; // 8px
+        display: block;
+    }
+
+    &__select {
+        background-color: #fff;
+
+        @media (max-width: 28.125rem) {
+            // 450px
+            min-height: max-content;
+        }
+    }
+
+    &__options {
+        display: flex;
+        column-gap: 1.25rem; // 20px
+        align-items: flex-end;
+
+        @media (max-width: 37.5rem) {
+            // 600px
+            flex-direction: column;
+            align-items: flex-start;
+            display: flex;
+            row-gap: 0.625rem; // 10px
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.625rem; // 10px
+        justify-content: space-between;
+    }
+
+    &--buy {
+        width: 37.5rem; // 600px
+    }
+
+    &--success &__main-content {
+        @media (max-width: 31.25rem) {
+            // 500px
+            padding: 1.5rem 1rem; // 24px 16px
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 1.5rem; // 24px
+        line-height: 1.2;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 1rem; // 16px
+        line-height: 1.375rem; // 22px
+        padding: 1rem 0 1.5rem; // 16px 0 24px
+
+        span {
+            padding-top: 0.5rem; // 8px
+            font-weight: 700;
+            font-size: 1.5rem; // 24px
+            line-height: 2.0625rem; // 33px
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; // 12px
+
+        @media (max-width: 31.25rem) {
+            // 500px
+            flex-wrap: wrap;
+        }
+    }
+
+    &__btn {
+        flex: auto;
+    }
+
+    &__btn--buy {
+        height: 4.125rem; // 66px
+        min-width: 9.125rem; // 146px
+
+        @media (max-width: 48em) {
+            // 768px
+            width: 100%;
+        }
+
+        @media (max-width: 31.25rem) {
+            // 500px
+            min-width: auto;
+        }
+    }
+
+    &--call {
+        max-width: 31.25rem; // 500px
+    }
+
+    &__btn--call {
+        width: 100%;
+        height: 4.125rem; // 66px
+        margin-top: 0.5rem; // 8px
+    }
+
+    @media (max-width: 48em) {
+        // 768px
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,25 @@
+@use "../base/variables" as *;
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.625rem; // 10px
+
+    &__name {
+        font-size: 0.75rem; // 12px
+        line-height: 1rem; // 16px
+        color: #6d6d6d;
+        margin-bottom: 4px;
+    }
+
+    &__value {
+        font-weight: 500;
+        font-size: 1.125rem; // 18px
+        line-height: 1.5625rem; // 25px
+        color: $font-color;
+        @media (max-width: 28.125rem) {
+            // 450px
+            font-size: 1rem;
+        }
+    }
+}

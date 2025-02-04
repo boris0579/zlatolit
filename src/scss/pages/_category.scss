@@ -1,0 +1,8 @@
+.category-page {
+    margin-top: 3rem; // 48px
+
+    @media (max-width: 48rem) {
+        // 768px
+        margin-top: 1.5rem;
+    }
+}

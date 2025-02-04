@@ -1,0 +1,31 @@
+@use "../base/variables" as *;
+
+.checkbox {
+    display: flex;
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+
+    &__box {
+        flex-shrink: 0;
+        width: 2.125rem; // 34px
+        height: 2.125rem; // 34px
+        background: #ffffff;
+        border: 0.0625rem solid #d6d6d6; // 1px
+        border-radius: 0.5rem; // 8px
+        @media (max-width: 28.125rem) {
+            // 450px
+            width: 1.875rem; // 30px
+            height: 1.875rem; // 30px
+        }
+    }
+
+    &__input:checked + .checkbox__box {
+        background-image: url("../assets/icons/checkbox-check.svg");
+        background-size: 1rem 0.75rem; // 16px 12px
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

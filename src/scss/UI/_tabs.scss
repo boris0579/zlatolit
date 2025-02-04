@@ -1,0 +1,106 @@
+@use "../base/variables" as *;
+
+.tabs {
+    &__nav-container {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.3125rem; /* 5px */
+        position: relative;
+    }
+
+    &__nav {
+        display: flex;
+        border-bottom: 0.0625rem solid #d6d6d6; /* 1px */
+        width: max-content;
+    }
+
+    &__item {
+        background: transparent;
+        border: none;
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.5625rem; /* 25px */
+        color: #6d6d6d;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1.5rem; /* 8px 24px */
+
+        @media (max-width: 48rem) {
+            /* 768px */
+            padding: 0.5rem 0.5rem; /* 8px 8px */
+        }
+
+        &--active {
+            color: $font-color;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -0.0625rem; /* -1px */
+                left: 0;
+                width: 100%;
+                height: 0.0625rem; /* 1px */
+                background-color: #744746;
+            }
+        }
+
+        &:not(.tabs__item--active) {
+            color: #6d6d6d;
+
+            &::after {
+                width: 0;
+            }
+        }
+    }
+
+    &__content {
+        font-weight: 500;
+        font-size: 1rem; /* 16px */
+        line-height: 1.375rem; /* 22px */
+        color: $font-color;
+    }
+
+    &__list {
+        list-style: disc;
+        padding-left: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem; // 16px
+        }
+    }
+
+    &__text {
+        margin-top: 1.5rem; // 24px
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem; /* 24px */
+        line-height: 2.0625rem; /* 33px */
+        margin: 2rem 0 1rem; /* 32px 0 16px */
+    }
+
+    &__panel {
+        display: none;
+        opacity: 0;
+
+        &--active {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    // Анимация для линии подчеркивания
+    @keyframes moveUnderline {
+        0% {
+            left: 0;
+            width: 0;
+        }
+        50% {
+            left: 0;
+            width: 100%;
+        }
+        100% {
+            left: 100%;
+            width: 0;
+        }
+    }
+}

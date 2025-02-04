@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Сборка проекта
+dist/
+
+# Файлы сборки Webpack
+*.cache
+.cache-loader
+
+# Логи и временные файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# Конфигурации и IDE/Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Файлы операционных систем
+*.DS_Store

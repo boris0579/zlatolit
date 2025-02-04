@@ -1,0 +1,211 @@
+@use "../base/variables" as *;
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem; // 8px 16px
+    width: max-content;
+    border-radius: 0.5rem; // 8px
+    font-size: 1rem; // initial (16px)
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    gap: 0.5rem; // 8px
+    transition: $transition-slow;
+    white-space: nowrap;
+
+    &--main {
+        background-color: $main-color;
+        color: #fff;
+
+        .preloader {
+            fill: #fff; // Цвет svg
+        }
+    }
+
+    &--wa {
+        background-color: $wa-color;
+        color: #fff;
+    }
+
+    &__text {
+
+        &--wa,
+        &--call {
+            @media (max-width: 26.5625rem) {
+                display: none;
+            }
+        }
+    }
+
+    &--dark {
+        background-color: $dark-color;
+        color: #fff;
+    }
+
+    &--red {
+        background-color: $red-color;
+        color: #fff;
+    }
+
+    &--menu {
+        border-color: #000000;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem; // 12px
+        width: 5rem; // 80px
+        height: 3.75rem; // 60px
+        padding: 0.9375rem 0.75rem 0.5rem; // 15px 12px 8px
+
+        @media (max-width: 64rem) {
+            // 1024px
+            padding: 0;
+            width: 2.875rem; // 46px
+            height: 100%;
+        }
+    }
+
+    &--outline-dark {
+        color: $font-color;
+        border: 1px solid $dark-color;
+
+        &:hover {
+            background-color: $dark-color;
+            color: #fff;
+        }
+    }
+
+    &--outline-main {
+        color: $main-color;
+        border: 1px solid $main-color;
+
+        &:hover {
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+
+    &--light {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $font-color;
+        background-color: #f5f5f5;
+    }
+
+    &__icon {
+        background-size: inherit;
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+
+        &--wa {
+            width: 1.375rem; // 22px
+            height: 1.375rem; // 22px
+            background-image: url("../assets/icons/wa.svg");
+        }
+
+        &--menu {
+            width: 1.5rem; // 24px
+            height: 1rem; // 16px
+            background-image: url("../assets/icons/menu.svg");
+        }
+
+        &--call {
+            width: 1rem; // 16px
+            height: 1rem; // 16px
+            background-image: url("../assets/icons/call.svg");
+
+            @media (min-width: 26.5625rem) {
+                display: none;
+            }
+        }
+
+        &--filter {
+            width: 19px;
+            height: 17px;
+            background-image: url("../assets/icons/filter.svg");
+        }
+
+        &--main,
+        &--white {
+            width: 0.6875rem; // 11px
+            height: 0.6875rem; // 11px
+        }
+
+        &--white {
+            background-image: url("../assets/icons/arrow-white-right.svg");
+        }
+
+        &--main {
+            mask-image: url("../assets/icons/arrow-white-right.svg");
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            background-color: $main-color;
+            transition: $transition-slow;
+
+            .btn:hover & {
+                background-color: #fff;
+            }
+        }
+
+        &--phone {
+            background-image: url("../assets/icons/contacts-phone.svg");
+            width: 1rem;
+            height: 1rem;
+            background-size: 100%;
+        }
+    }
+
+    @media (max-width: 64rem) {
+        &--menu &__text {
+            display: none;
+        }
+    }
+
+    &--call,
+    &--wa {
+        @media (max-width: 26.5625rem) {
+            padding: 0.5rem;
+            // width: 2.375rem; // 38px
+            // height: 2.375rem; // 38px
+        }
+    }
+
+    /* Общие стили для кнопок с атрибутом data-loader */
+    &[data-loader] {
+        transition: all 0.3s ease;
+    }
+
+    /* Состояние кнопки при загрузке */
+    &[data-loader="true"]:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Прелоадер */
+    &[data-loader="true"] .preloader {
+        animation: spin 1s linear infinite;
+    }
+
+    /* Анимация вращения */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.btn-close {
+    background-image: url('../assets/icons/close-modal.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 0.9375rem; // 15px
+    height: 0.9375rem; // 15px
+    display: block;
+}

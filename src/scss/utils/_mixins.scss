@@ -1,0 +1,72 @@
+@mixin masked-icon($url, $initial-color, $transition) {
+    mask-image: url(#{$url});
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: $initial-color;
+    transition: $transition;
+}
+
+@mixin hide-scrollbar {
+    scrollbar-width: none;
+    /* Скрываем скроллбар в Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* Скрываем скроллбар в WebKit-браузерах */
+    }
+}
+
+// Миксин для отображения скроллбара
+@mixin show-scrollbar {
+    overflow: auto;
+    /* Включаем прокрутку */
+    scrollbar-width: auto;
+    /* Возвращаем стандартный скроллбар в Firefox */
+
+    &::-webkit-scrollbar {
+        display: block;
+        /* Отображаем скроллбар в WebKit-браузерах */
+    }
+}
+
+// SCSS миксин для анимации появления
+@mixin fade-in($distance: 0.625rem, $duration: 0.3s, $easing: ease, $fill-mode: forwards) {
+
+    // Обертка для будущих версий Sass
+    & {
+        animation: fade-in $duration $easing $fill-mode;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY($distance);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+// SCSS миксин для анимации исчезновения
+@mixin fade-out($distance: 0.625rem, $duration: 0.3s, $easing: ease, $fill-mode: forwards) {
+
+    // Обертка для будущих версий Sass
+    & {
+        animation: fade-out $duration $easing $fill-mode;
+    }
+
+    @keyframes fade-out {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(-$distance);
+        }
+    }
+}

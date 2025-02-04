@@ -1,0 +1,46 @@
+@use "../base/variables" as *;
+
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.75rem; // 4px, 12px
+    width: max-content;
+    height: 1.875rem; // 30px
+    font-size: 1rem; // 16px
+    line-height: 1.375rem; // 22px
+    color: #ffffff;
+    border-radius: 0.5rem; // 8px
+    z-index: 1;
+
+    &--hit {
+        background-color: #744746;
+    }
+
+    &--sample {
+        background-color: #000;
+    }
+
+    &--blur {
+        padding: 0.5rem 0.75rem; // 8px, 12px
+        background: rgba(68, 68, 68, 0.3);
+        backdrop-filter: blur(2px);
+        height: max-content;
+    }
+
+    &--sale {
+        background-color: #FF2020;
+        font-weight: 700;
+    }
+
+    &--info {
+        background-color: #0E99FE;
+        font-weight: 700;
+    }
+
+    &--warn {
+        background-color: #FFD900;
+        font-weight: 700;
+        color: $font-color
+    }
+}

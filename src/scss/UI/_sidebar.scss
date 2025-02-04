@@ -1,0 +1,103 @@
+@use '../base/variables' as *;
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    background-color: #fff;
+    padding: 1.375rem 1rem 1.5rem; // 22px 16px 24px
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    @media (min-width: 64rem) {
+        // 1024px
+        padding: 1.5rem; // 24px
+        background: #f5f5f5;
+        border: 1px solid #d6d6d6;
+        border-radius: 0.5rem; // 8px
+        width: max-content;
+
+        &[data-panel='open'] {
+            top: 100%;
+            transform: translateY(0);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+
+    &[data-panel='open'] {
+        @media (max-width: 64rem) {
+            top: 100%;
+            transform: translateY(0);
+            box-shadow: 0 1.25rem 3.125rem rgba(159, 159, 159, 0.25); // 20px 50px
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: 2.5rem; // 40px
+    }
+
+    &__menu-item {
+        font-size: 1rem;
+        line-height: 1.375rem; // 22px
+        color: #000000;
+    }
+
+    &__divider {
+        display: none;
+
+        @media (min-width: 64rem) {
+            display: block;
+            width: 0.0625rem; // 1px
+            height: auto;
+            background-color: #6d6d6d;
+        }
+    }
+
+    &__menu-center,
+    &__menu-left,
+    &__menu-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__menu-left {
+        display: none;
+
+        @media (min-width: 64rem) {
+            // 1024px
+            display: flex;
+        }
+    }
+
+    &__phone {
+        font-weight: 600;
+        font-size: 1.5rem; // 24px
+        line-height: 2.0625rem; // 33px
+        color: #000000;
+        margin-top: 1.5rem; // 24px
+        display: block;
+    }
+
+    &__email {
+        margin-top: 0.5rem; // 8px
+        font-size: 1.5rem; // 24px
+        line-height: 2.0625rem; // 33px
+        color: $font-color;
+        display: block;
+    }
+
+    &__contact {
+        display: block;
+
+        @media (min-width: 64rem) {
+            // 1024px
+            display: none;
+        }
+    }
+}

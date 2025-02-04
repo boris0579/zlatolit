@@ -1,0 +1,18 @@
+.color-picker {
+    display: flex;
+    column-gap: 16px;
+
+    &__button {
+        cursor: pointer;
+        transition: border-color 0.1s ease;
+        width: 49px;
+        height: 49px;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+
+        &[data-selected="true"] {
+            border-width: 3px;
+            border-color: #000;
+        }
+    }
+}
