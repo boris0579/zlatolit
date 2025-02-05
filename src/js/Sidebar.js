@@ -70,8 +70,8 @@ class Sidebar {
         }
 
         // Устанавливаем цвет кнопки
-        button.style.backgroundColor = '#F5F5F5'
-        this.activeButton = button // Сохраняем активную кнопку
+        button.classList.add('btn--menu-active');
+        this.activeButton = button;
 
         // Показываем наложение, если оно существует
         if (this.overlay) {
@@ -87,9 +87,8 @@ class Sidebar {
     closeSidePanel () {
         this.sidePanel.setAttribute('data-panel', 'closed')
 
-        // Сбрасываем цвет активной кнопки
         if (this.activeButton) {
-            this.activeButton.style.backgroundColor = ''
+            this.activeButton.classList.remove('btn--menu-active');
 
             // Меняем иконку обратно, если она есть
             const menuIcon = this.activeButton.querySelector('[data-icon-menu]')

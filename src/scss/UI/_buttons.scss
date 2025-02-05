@@ -49,21 +49,32 @@
         color: #fff;
     }
 
+    &--golden {
+        color: #fff;
+        background: #D39B5E;
+    }
+
     &--menu {
-        border-color: #000000;
+        border-color: #D6D6D6;
         display: flex;
         flex-direction: column;
         font-size: 0.75rem; // 12px
         width: 5rem; // 80px
         height: 3.75rem; // 60px
         padding: 0.9375rem 0.75rem 0.5rem; // 15px 12px 8px
+        color: #fff;
 
         @media (max-width: 64rem) {
             // 1024px
             padding: 0;
             width: 2.875rem; // 46px
-            height: 100%;
+            height: auto;
         }
+    }
+
+    &--menu-active {
+        background-color: #F5F5F5;
+        color: $font-color;
     }
 
     &--outline-dark {
@@ -77,11 +88,11 @@
     }
 
     &--outline-main {
-        color: $main-color;
-        border: 1px solid $main-color;
+        color: $dark-color;
+        border: 1px solid $dark-color;
 
         &:hover {
-            background-color: $main-color;
+            background-color: $dark-color;
             color: #fff;
         }
     }
@@ -141,7 +152,7 @@
             mask-image: url("../assets/icons/arrow-white-right.svg");
             mask-size: contain;
             mask-repeat: no-repeat;
-            background-color: $main-color;
+            background-color: $dark-color;
             transition: $transition-slow;
 
             .btn:hover & {

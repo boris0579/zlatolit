@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    background-color: #786565;
+    background-color: #D39B5E;
     color: #ffffff;
     overflow: hidden;
     width: 100%;
@@ -13,7 +13,7 @@
         width: calc(100% - 2rem);
         min-height: 14.2rem; // 227px
         height: max-content;
-        margin: 0 auto 2.3125rem; // 37px
+        margin: 1rem auto 2.3125rem; // 37px
         border-radius: 1rem; // 16px
 
         &::after {
@@ -25,11 +25,11 @@
             height: 100%;
             background: linear-gradient(
                 0deg,
-                rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.4)
+                rgba(156, 112, 64, 0.8),
+                rgba(156, 112, 64, 0.8)
             );
             pointer-events: none;
-            z-index: 3;
+            z-index: 1;
         }
     }
 
@@ -53,11 +53,35 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            width: 50%;
+            height: 100%;
+            background: rgba(84, 63, 40, 0.8);
+            filter: blur(100px);
+            border-radius: 50%;
+            transform: translate(-10%, -50%);
+            pointer-events: none;
+            z-index: -1;
+
+            @media (max-width: 64rem) {
+                // 1024px
+                left: 0;
+                transform: translate(0%, -50%);
+                width: 100%;
+                background: rgba(156, 112, 64, 0.8);
+            }
+        }
 
         @media (max-width: 64rem) {
             // 1024px
             padding: 1.5rem 0.5rem; // 24px 8px
-            min-height: 200px;
+            min-height: 12.5rem; // 200px
         }
     }
 
@@ -108,30 +132,20 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        width: 50%;
         height: 100%;
 
         &--left {
             left: 0;
             z-index: 2;
-            background-image: url("../assets/images/banner-left.png");
-        }
-
-        &--center {
-            left: 25%;
-            z-index: -1;
-            background-image: url("../assets/images/banner-center.png");
-            background-position-x: left;
-            @media (max-width: 31.25rem) {
-                // 500px
-                width: 100%;
-            }
+            width: 70%;
+            background-image: url("../assets/images/banner-left.jpg");
         }
 
         &--right {
             right: 0;
-            z-index: 2;
-            background-image: url("../assets/images/banner-right.png");
+            z-index: 1;
+            width: 70%;
+            background-image: url("../assets/images/banner-right.jpg");
             background-position-x: left;
         }
     }

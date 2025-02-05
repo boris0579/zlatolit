@@ -15,10 +15,12 @@
         background: #ffffff;
         border: 0.0625rem solid #d6d6d6; // 1px
         border-radius: 0.5rem; // 8px
+        margin-right: 1rem;
         @media (max-width: 28.125rem) {
             // 450px
             width: 1.875rem; // 30px
             height: 1.875rem; // 30px
+            margin-right: 0.5rem; // 8px
         }
     }
 

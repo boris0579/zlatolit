@@ -33,10 +33,12 @@
         &--center {
             display: flex;
             flex-direction: column;
+
             @media (max-width: 64rem) {
                 // 1024px
                 grid-column: span 3;
             }
+
             @media (max-width: 37.5rem) {
                 // 600px
                 order: 2;
@@ -58,6 +60,7 @@
                 grid-column: span 3;
                 display: flex;
             }
+
             @media (max-width: 37.5rem) {
                 // 600px
                 order: 3;
@@ -67,14 +70,19 @@
         }
     }
 
-    &__logo {
-        display: block;
-        background-image: url("../assets/icons/footer-logo-desktop.svg");
+    &__logo,
+    &__logo-mobile {
+        background-image: url("../assets/icons/logo.svg");
         background-size: contain;
         background-repeat: no-repeat;
-        flex-shrink: 0;
-        width: 12.875rem; // 206px
+        width: 14.375rem; // 230px
         height: 4.6875rem; // 75px
+    }
+
+    &__logo {
+        display: block;
+        flex-shrink: 0;
+
         @media (max-width: 37.5rem) {
             // 600px
             display: none;
@@ -83,22 +91,19 @@
 
     &__logo-mobile {
         display: none;
+
         @media (max-width: 37.5rem) {
             // 600px
             order: 1;
             display: block;
-            background-size: contain;
-            background-repeat: no-repeat;
             flex-shrink: 1;
-            background-image: url("../assets/icons/footer-logo-mobile.svg");
-            width: 20.0625rem; // 321px
-            height: 4.6875rem; // 75px
             grid-column: span 2;
         }
     }
 
     &__working-hours {
         margin-top: 1.25rem; // 20px
+
         @media (max-width: 37.5rem) {
             // 600px
             margin-top: 0;
@@ -150,6 +155,7 @@
         flex-wrap: wrap;
         gap: 1.25rem; // 20px
         justify-content: space-between;
+
         @media (max-width: 37.5rem) {
             // 600px
             display: none;
@@ -157,6 +163,7 @@
 
         &--mobile {
             display: none;
+
             @media (max-width: 37.5rem) {
                 // 600px
                 display: block;
