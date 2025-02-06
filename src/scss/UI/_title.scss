@@ -1,11 +1,27 @@
 @use "../base/variables" as *;
 
 .page-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; // 24px
+
     &__heading {
         font-weight: 600;
         font-size: 2rem; // 32px
         line-height: 2.75rem; // 44px
         color: $font-color;
         word-wrap: break-word;
+        height: max-content;
+    }
+
+    &__divider {
+        flex: auto;
+        height: 0.125rem; // 2px
+        background-color: $dark-color;
+
+        @media (max-width: 48rem) {
+            // 768px
+            display: none;
+        }
     }
 }

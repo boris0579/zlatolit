@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .consultation {
-    margin: 5rem 0; // 80px
+    margin-top: 5rem; // 80px
     &__block {
         background: $dark-color;
         border-radius: 0.5rem; // 8px
@@ -68,7 +68,7 @@
         }
     }
 
-    @media (max-width: 990px) {
-        margin: 48px 0;
+    @media (max-width: 61.875rem) { // 990px
+        margin-top: 3rem; // 0
     }
 }

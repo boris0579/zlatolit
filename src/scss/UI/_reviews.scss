@@ -1,7 +1,12 @@
 @use "../base/variables" as *;
 
 .reviews {
-    padding: 5rem 0; // 80px 0
+
+    padding-top: 5rem; // 80px
+    @media (max-width: 84.375rem) {
+        // 1350px
+        padding-bottom: 5rem; // 80px
+    }
 
     @media (max-width: 48rem) {
         // 768px

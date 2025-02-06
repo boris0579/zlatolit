@@ -1,9 +1,9 @@
 .reviews-page {
-    padding: 1.875rem 0 5rem; // 30px 0 80px
+    padding-top: 1.875rem; // 30px 0 80px
 
     @media (max-width: 48rem) {
         // 768px
-        padding: 1rem 0 3rem; // 16px 0 48px
+        padding-top: 1rem; // 16px 0 48px
     }
 
     &__container {

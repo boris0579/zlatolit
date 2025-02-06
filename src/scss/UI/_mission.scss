@@ -1,0 +1,47 @@
+@use "../base/variables" as *;
+
+.mission-block {
+    &__title {
+        font-weight: 700;
+        font-size: 3rem;
+        /* 48px */
+        line-height: 4.125rem;
+        /* 66px */
+        color: #000000;
+        margin: 2rem 0 1.625rem;
+        /* 32px, 26px */
+
+        @media (max-width: 48rem) {
+            // 768px
+            font-size: 2rem;
+            /* 32px */
+            line-height: 2.75rem;
+            /* 44px */
+            margin: 1.5rem 0 1.5rem;
+            /* 24px */
+        }
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 2rem;
+        /* 32px */
+        line-height: 2.75rem;
+        /* 44px */
+        color: #000000;
+        border-left: 0.375rem solid $main-color;
+        /* 6px */
+        padding-left: 2rem;
+        /* 32px */
+
+        @media (max-width: 48rem) {
+            // 768px
+            font-size: 1.5rem;
+            /* 24px */
+            line-height: 2.0625rem;
+            /* 33px */
+            padding-left: 1.5rem;
+            /* 24px */
+        }
+    }
+}

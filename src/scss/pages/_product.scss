@@ -124,6 +124,10 @@
         }
     }
 
+    &__main-media .splide__track {
+        height: 100%;
+    }
+
     &__main-item {
 
         /* Активный слайд в главном слайдере */
@@ -409,10 +413,17 @@
                     border-radius: 50%;
 
                     &.is-active {
-                        background: #744746;
+                        background: $main-color;
                     }
                 }
             }
+        }
+    }
+    &__video {
+        margin-top: 5rem; // 80px
+        @media (max-width: 84.375rem) {
+            // 1350px
+            margin-top: 1.5rem; // 24px
         }
     }
 }

@@ -1,9 +1,9 @@
 .advantages {
-    margin-top: 4.375rem; // 70px
+    margin: 4.375rem 0 4.375rem; // 70px
 
     @media (max-width: 48rem) {
         // 768px
-        margin-top: 3rem; // 48px
+        margin: 3rem 0 3rem; // 48px
     }
 
     &__title {

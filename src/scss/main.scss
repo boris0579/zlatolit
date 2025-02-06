@@ -34,6 +34,8 @@
 @use "UI/catalog-sidebar";
 @use "UI/notification";
 @use "UI/advantages";
+@use "UI/video";
+@use "UI/mission";
 // @use "UI/scrollbar";
 
 // Pages
@@ -48,6 +50,7 @@
 @use "pages/catalog";
 @use "pages/category";
 @use "pages/content-page";
+@use "pages/payment-delivery";
 @use "pages/materials" as materialPage;
 
 body {
@@ -67,6 +70,10 @@ body {
 
 .main {
     flex-grow: 1;
+    padding-bottom: 5rem; // 80px
+    @media (max-width: 48rem) { // 768px
+        padding-bottom: 3rem; // 0
+    }
 }
 
 .container {

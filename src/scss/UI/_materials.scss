@@ -1,9 +1,17 @@
 .materials {
+
+    margin-top: 5rem; // 80px
+    @media (max-width: 84.375rem) {
+        // 1350px
+        margin-top: 1.5rem; // 24px
+    }
+
     &__body {
         display: flex;
         column-gap: 2.5rem; // 40px
 
-        @media (max-width: 990px) {
+        @media (max-width: 61.875rem) {
+            // 990px
             flex-wrap: wrap;
             row-gap: 1rem;
         }
@@ -15,7 +23,8 @@
         color: #000000;
         flex: 1;
 
-        @media (max-width: 990px) {
+        @media (max-width: 61.875rem) {
+            // 990px
             flex: auto;
             font-size: 1rem;
             line-height: 22px;
@@ -26,7 +35,8 @@
         &:not(:last-child) {
             margin-bottom: 1rem; // 16px
 
-            @media (max-width: 990px) {
+            @media (max-width: 61.875rem) {
+                // 990px
                 margin-bottom: 8px;
             }
         }
@@ -39,7 +49,8 @@
         color: #000000;
         margin-bottom: 2rem; // 32px
 
-        @media (max-width: 990px) {
+        @media (max-width: 61.875rem) {
+            // 990px
             line-height: 2.5rem; // 40px
             margin-bottom: 1rem; // 16px
         }
@@ -50,7 +61,8 @@
         flex-direction: column;
         gap: 2.5rem;
 
-        @media (max-width: 990px) {
+        @media (max-width: 61.875rem) {
+            // 990px
             flex: auto;
             gap: 1rem;
         }
@@ -65,9 +77,5 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
-    }
-
-    @media (max-width: 990px) {
-        margin-top: 48px;
     }
 }

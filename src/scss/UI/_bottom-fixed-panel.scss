@@ -1,12 +1,13 @@
+@use "../base/variables" as *;
+
 .fixed-panel {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: $dark-color;
     z-index: 10;
     width: 100%;
     height: max-content;
-    background: #ffffff;
     box-shadow: 1.25rem 0 3.125rem rgba(159, 159, 159, 0.25);
     /* box-shadow: 20px 0px 50px */
 
@@ -28,7 +29,7 @@
         /* font-size: 12px */
         line-height: 1rem;
         /* line-height: 16px */
-        color: #000000;
+        color: #fff;
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
