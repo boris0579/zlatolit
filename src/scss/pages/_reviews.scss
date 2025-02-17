@@ -8,12 +8,13 @@
 
     &__container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem; // 40px
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem; // 32px
 
-        @media (max-width: 56.25rem) {
+        @media (max-width: 71.875rem) {
+            // 1150px
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem; // 20px
+            gap: 1rem; // 16px
         }
 
         @media (max-width: 48rem) {

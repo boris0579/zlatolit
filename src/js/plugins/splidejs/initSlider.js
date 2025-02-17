@@ -17,42 +17,42 @@ export default function initSlider () {
     // Слайдер для отзывов
     const reviewSlider = new SplideSlider('reviews', {
         type: 'loop',
-        perPage: 3,
+        perPage: 4,
         autoplay: true,
-        gap: '40px',
+        gap: '2rem',
         live: false,
         pagination: true,
         arrows: true,
         breakpoints: {
-            900: {
-                perPage: 2,
-                gap: '10px'
+            1150: {
+                perPage: 3,
+                gap: '1rem'
             },
             768: {
                 perPage: 1,
-                gap: '5px'
+                gap: '0.3125rem'
             }
         }
     })
 
     // Слайдер для категорий
-    const categoriesSlider = new SplideSlider('categories', {
-        autoWidth: true,
-        arrows: false,
-        pagination: false,
-        drag: 'free',
-        live: false,
-        // waitForTransition: true,
-        wheel: true,
-        breakpoints: {
-            768: {
-                type: 'loop'
-            },
-            450: {
-                focus: 'center'
-            }
-        }
-    })
+    // const categoriesSlider = new SplideSlider('categories', {
+    //     autoWidth: true,
+    //     arrows: false,
+    //     pagination: false,
+    //     drag: 'free',
+    //     live: false,
+    //     // waitForTransition: true,
+    //     wheel: true,
+    //     breakpoints: {
+    //         768: {
+    //             type: 'loop'
+    //         },
+    //         450: {
+    //             focus: 'center'
+    //         }
+    //     }
+    // })
 
     // Карточки каталог
     const catalogCard = new SplideSlider('catalog-card', {
@@ -80,7 +80,7 @@ export default function initSlider () {
                 fixedWidth: '10.8rem', // Фиксированная ширина карточки (173px)
                 gap: '0'
             },
-            425: {
+            430: {
                 focus: 'center',
                 gap: '0.75rem' // 12px
             }
@@ -128,5 +128,5 @@ export default function initSlider () {
     catalogCard.init()
     cardSlider.init()
     reviewSlider.init()
-    categoriesSlider.init()
+    // categoriesSlider.init()
 }

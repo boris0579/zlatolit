@@ -3,6 +3,7 @@
 .reviews {
 
     padding-top: 5rem; // 80px
+
     @media (max-width: 84.375rem) {
         // 1350px
         padding-bottom: 5rem; // 80px
@@ -51,7 +52,7 @@
 
     &__image {
         width: 100%;
-        height: 19.875rem; // 318px
+        height: 15.625rem; // 250px
         object-fit: cover;
         object-position: center;
         display: block;
@@ -59,8 +60,8 @@
     }
 
     &__text {
-        font-size: 1.5rem; // 24px
-        line-height: 2.0625rem; // 33px
+        font-size: 1.1rem; // 17px
+        line-height: 1.3; // 33px
         color: $font-color;
         padding: 1.5rem 2rem; // 24px 32px
         flex: 1;
@@ -99,27 +100,13 @@
     }
 
     &__author {
-        font-size: 1.5rem; // 24px
-        line-height: 2.0625rem; // 33px
+        font-size: 1rem;
         color: $font-color;
-
-        @media (max-width: 28.125rem) {
-            // 450px
-            font-size: 1rem; // 16px;
-            line-height: 1;
-        }
     }
 
     &__location {
-        font-size: 1rem; // 16px
-        line-height: 1.375rem; // 22px
-        color: #6d6d6d;
-
-        @media (max-width: 28.125rem) {
-            // 450px
-            font-size: 0.9rem;
-            line-height: 1;
-        }
+        font-size: 0.9rem;
+        line-height: 1;
     }
 
     .splide__pagination {

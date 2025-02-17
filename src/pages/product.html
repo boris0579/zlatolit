@@ -88,7 +88,7 @@
                                 <a href="https://api.whatsapp.com/send?phone=79876543211" target="_blank"
                                     class="btn btn--wa" title="Написать в WhatsApp" rel="noopener noreferrer">
                                     <span class="btn__icon btn__icon--wa"></span>
-                                    <span class="btn__text btn__text--wa"><span>Написать в </span>WhatsApp</span>
+                                    <span class="btn__text btn__text--wa">WhatsApp</span>
                                 </a>
 
                                 <button type="button" class="btn btn--main btn--call header__btn-call"
@@ -114,6 +114,8 @@
                         <a href="#" class="sidebar__menu-item" title="Лемезит">Лемезит</a>
                         <a href="#" class="sidebar__menu-item" title="Златолит">Златолит</a>
                         <a href="#" class="sidebar__menu-item" title="Сланец">Сланец</a>
+                        <a href="#" class="sidebar__menu-item" title="Песчаник">Песчаник</a>
+                        <a href="#" class="sidebar__menu-item" title="Кварцит">Кварцит</a>
                     </ul>
                     <span class="sidebar__divider"></span>
                     <ul class="sidebar__menu-center">
@@ -182,9 +184,6 @@
                     <li class="breadcrumbs__item">
                         <a href="#" class="breadcrumbs__link" title="Перейти в раздел Брусчатка из сланца">Брусчатка из
                             сланца</a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <a href="#" class="breadcrumbs__link" title="Особенности брусчатки из сланца">Особенности</a>
                     </li>
                     <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">
                         Брусчатка из сланца квадрат 100х100х40мм
@@ -782,7 +781,7 @@
                     </li>
                 </ul>
                 <p class="footer__copyright" title="Авторские права">
-                    &copy; 2023-2024 Брусчатка. Все права защищены.
+                    &copy; 2023-2025 Златолит. Все права защищены.
                 </p>
             </div>
 
@@ -821,7 +820,7 @@
                             placeholder="Ваш email" />
                     </div>
                     <div class="input">
-                        <input id="tel" class="input__field  input__field--focus" type="tel" name="tel"
+                        <input data-mask-phone class="input__field  input__field--focus" type="tel" name="tel"
                             placeholder="+7 (000) 000-00-00*" />
                     </div>
                     <button type="submit" class="btn btn--red modal__btn--call">
@@ -856,7 +855,7 @@
                     </div>
                     <div class="input">
                         <span class="input__error-message">Проверьте формат указанных данных</span>
-                        <input id="tel" class="input__field  input__field--focus input__field--error" type="tel"
+                        <input data-mask-phone class="input__field  input__field--focus input__field--error" type="tel"
                             name="tel" placeholder="+7 (000) 000-00-00*" />
                     </div>
                     <div class="input">

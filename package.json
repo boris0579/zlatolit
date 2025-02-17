@@ -29,6 +29,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4"
+    "@splidejs/splide": "^4.1.4",
+    "imask": "^7.6.1"
   }
 }

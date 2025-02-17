@@ -16,6 +16,7 @@ import QuantityInput from './QuantityInput'
 import NotificationManager from './NotificationManager'
 import { setupCardLinks } from './utils/card'
 import PromoBlock from './PromoBlock'
+import initPhoneMask from './plugins/imask'
 
 document.addEventListener('DOMContentLoaded', () => {
     // Modals
@@ -175,4 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break
         }
     })
+
+    // Маска для телефона
+    initPhoneMask('[data-mask-phone]')
 })

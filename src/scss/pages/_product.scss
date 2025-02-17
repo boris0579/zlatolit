@@ -202,6 +202,7 @@
         font-size: 1.125rem; // 18px
         line-height: 1.5625rem; // 25px
         color: $font-color;
+        align-self: flex-end;
     }
 
     &__features {
