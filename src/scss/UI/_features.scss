@@ -22,8 +22,8 @@
         line-height: 1.5625rem; // 25px
         color: $font-color;
 
-        @media (max-width: 28.125rem) {
-            // 450px
+        @media (max-width: 48rem) {
+            // 768px
             font-size: 0.9375rem; // 15px
         }
     }

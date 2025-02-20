@@ -216,10 +216,10 @@
                             <p class="product-info__detail product-info__detail--availability">
                                 В наличии
                             </p>
-                            <p class="product-info__detail product-info__detail--stock">
+                            <!-- <p class="product-info__detail product-info__detail--stock">
                                 Осталось
                                 <span class="product-info__highlight">2 паллета</span>
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                     <div class="product-info__divider"></div>
@@ -363,13 +363,14 @@
                         </div>
                     </div>
                     <div class="product__actions">
-                        <button href="#!" class="btn btn--red product__action">
-                            Заказать
+                        <button class="btn btn--red product__action" data-modal-target="buy-click">
+                            Купить
                         </button>
-                        <button class="btn btn--main product__action" data-modal-target="buy-click">
-                            Купить в 1 клик
-                            <span class="btn__icon btn__icon--white" aria-hidden="true"></span>
-                        </button>
+                        <a href="https://api.whatsapp.com/send?phone=79876543211" target="_blank"
+                            class="btn btn--wa product__action" title="Написать в WhatsApp" rel="noopener noreferrer">
+                            <span class="btn__icon btn__icon--wa"></span>
+                            <span class="btn__text btn__text--wa">WhatsApp</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -802,6 +803,100 @@
 
     <!-- Элемент наложения (overlay) -->
     <div class="overlay" data-overlay></div>
+
+        <!-- MODAL: Оформление заказа -->
+        <div class="modal modal--buy" data-modal="buy-click">
+            <div class="modal__wrapper">
+                <div class="modal__header">
+                    <div class="modal__image-container">
+                        <span class="badge badge--hit modal__badge">Хит</span>
+                        <img src="../assets/images/1.jpg" alt="Брусчатка из сланца квадрат" class="modal__image" />
+                        <h2 class="modal__title-mobile">
+                            Брусчатка из сланца квадрат
+                        </h2>
+                    </div>
+                    <div class="modal__details">
+                        <h2 class="modal__title-desk">
+                            Брусчатка из сланца квадрат
+                        </h2>
+                        <div class="modal__options">
+                            <div class="modal__option">
+                                <label class="modal__label">Количество <span
+                                        class="unit modal__unit">(M<sup>2</sup>)</span></label>
+                                <div class="input input--quantity" data-quantity>
+                                    <span class="input__btn input__btn--minus" data-action="decrease"
+                                        aria-label="Уменьшить количество"></span>
+                                    <input class="input__field input__field--quantity" type="number" value="5" data-field />
+                                    <span class="input__btn input__btn--plus" data-action="increase"
+                                        aria-label="Увеличить количество"></span>
+                                </div>
+                            </div>
+                            <div class="modal__option">
+                                <label class="modal__label">Толщина</label>
+                                <div class="select" data-select>
+                                    <button class="select__trigger modal__select" data-trigger-selected
+                                        data-value="30-39 мм">
+                                        30-39 мм
+                                    </button>
+                                    <div class="select__dropdown">
+                                        <ul class="select__options" data-select-options>
+                                            <li class="select__option" data-value="30-39" data-select-option>
+                                                30-39 мм
+                                            </li>
+                                            <li class="select__option" data-value="40-49" data-select-option>
+                                                40-49 мм
+                                            </li>
+                                            <li class="select__option" data-value="50-59" data-select-option>
+                                                50-59 мм
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__main-content">
+                    <button class="btn-close modal__btn-close" title="Закрыть" aria-label="Закрыть окно"
+                        data-close-button></button>
+                    <h3 class="modal__title">Оформление заказа</h3>
+                    <form class="modal__form" action="#" method="post">
+                        <div class="input">
+                            <input id="name" class="input__field input__field--focus" type="text" name="name"
+                                placeholder="Ваше имя" />
+                        </div>
+                        <div class="input">
+                            <span class="input__error-message">Проверьте формат указанных данных</span>
+                            <input id="email" class="input__field input__field--focus input__field--error" type="email"
+                                name="email" placeholder="Ваш email" value="ivanivanov%gmail.com" />
+                        </div>
+                        <div class="input">
+                            <input data-mask-phone class="input__field input__field--focus" type="tel" name="tel"
+                                placeholder="+7 (000) 000-00-00*" />
+                        </div>
+                        <div class="modal__amount-summary">
+                            <div class="modal__amount">
+                                <span class="modal__amount-label">Сумма:</span>
+                                <span class="modal__amount-value">56 000 ₽</span>
+                            </div>
+                            <button type="submit" class="btn btn--red modal__btn--buy">
+                                Заказать
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal__policy">
+                    <p>
+                        Нажимая кнопку “Заказать”, вы даете согласие на
+                        обработку персональных данных и соглашаетесь с политикой
+                        конфиденциальности.
+                    </p>
+                </div>
+                <!-- NOTIFY ORDER INFO -->
+                <div class="notification-container" data-notification="order-info"></div>
+            </div>
+        </div>
+        <!-- MODAL END -->
 
     <!-- MODAL: Заказать звонок -->
     <div class="modal modal--call" data-modal="call">
