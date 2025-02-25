@@ -21,14 +21,16 @@
     &__inner {
         display: flex;
         gap: 0 2.2rem;
-        padding: 0.3125rem 0;
+        padding: 0.3125rem;
         justify-content: space-between;
         overflow-x: auto;
-        @include hide-scrollbar;
+        margin: 0 -0.3125rem;
 
         @media (max-width: 48rem) {
+            @include hide-scrollbar;
             gap: 1rem;
-            padding: 0 1rem;
+            padding: 0.3125rem 1rem;
+            margin: 0;
         }
     }
 
